@@ -1,0 +1,105 @@
+.sidenav {
+    width: 5%;
+    height: 550px;
+    background-color: #30394c;
+    z-index: 1;
+    transition: 0.1s ease;
+  
+  }
+  .sidenav-toggle{
+    width: 15%;
+    height: 550px;
+    background-color: #30394c;
+    z-index: 1;
+    transition: 0.1s ease;
+
+  }
+  .sidenav ul li a,.sidenav-toggle ul li a{
+    padding: 15px 20px;
+    color: #ffffff;
+    display: flex;
+    overflow: hidden;
+  }
+  .sidenav ul li img,.sidenav-toggle ul li img{
+    width:16px;
+    height: 16px;
+  }
+  .sidenav ul li span{
+    display: none;
+  }
+  .sidenav-toggle ul li span{
+    display: block;
+    color: #95a5a6;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-left: 20px;
+    line-height: 22px;
+    transition: 0.7s ease;
+  }
+  .sidenav ul li:hover ,.sidenav-toggle ul li:hover{
+    background-color: #b0b0b0;
+  }
+  .picked{
+    border-right:4px solid #6fcf3d; 
+    background-color: #181a27;
+  }
+  .flex-sidenav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+  }
+  #sidenav .layout {
+    top: 0;
+    width: 95%;
+    margin-left: 5%;
+    position: absolute;
+    background-color: #efefef;
+    height: 620px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: 0.1s ease;
+  }
+  #sidenav-toggle .layout {
+    top: 0;
+    width: 85%;
+    margin-left: 15%;
+    position: absolute;
+    background-color: #efefef;
+    height: 620px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: 0.1s ease;
+  }
+  
+
+  /*------------------------*/
+  .tabbed-box .tabs li {
+	list-style: none;
+	float: left;
+	width: 98px;
+}
+.tabbed-box .tabs li a {
+	display: block;
+	width: 98px;
+	padding: 5px 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	background: #fff repeat-x bottom;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	
+	background-repeat: repeat-x;
+
+	}
+.tabbed-box .tabs li:first-child a {
+	border-left: none; }
+.tabbed-box .tabs li a:hover {
+	color: #92D050; }
+.current li a.active {
+	background: #A9DB73;
+	color: #333;
+	border-bottom: 1px solid #fff; }
+.tabbed-content {
+	padding: 3em 1em 1em 1em;
+}

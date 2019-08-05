@@ -1,0 +1,212 @@
+.panel-group {
+    width: 100%;
+}
+
+.panel-heading {
+    height: 52px;
+}
+
+.panel span {
+    padding-left: 20px;
+    line-height: 50px
+}
+
+.panel-default .panel-heading {
+    width: 100%;
+    background-color: #b0b0b0;
+    padding: 2px 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.panel-title div {
+    padding: 0 1%;
+    width: 25%;
+    line-height: 10px;
+}
+
+.panel-title div:last-child img {
+    margin-left: 100%;
+}
+
+.panel-default .even {
+    width: 100%;
+    background-color: #efefef;
+    padding: 2px 20px;
+    height: 52px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.panel-default>.panel-heading a {
+    display: block;
+    text-align: left;
+    margin: 0 8%;
+}
+
+.panel-default>.panel-heading a:after {
+    content: "";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+}
+
+.panel-body {
+    width: 95%;
+    padding: 0 1%;
+}
+
+.panel .footer {
+    width: 100%;
+    height: 52px;
+    background-color: #6d85ff;
+    color: #ffffff;
+    line-height: 52px;
+    padding: 0 3.3%;
+    font-weight: bold;
+}
+
+.footer p {
+    width: 114px;
+    text-align: right;
+}
+
+.panel a {
+    color: #222222;
+    font-weight: bold;
+}
+
+.panel a:hover {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.down img {
+    margin-top: 20px;
+    width: 15px;
+    height: 15px
+}
+
+.custom-select {
+    height: 100px ;
+    width: 100% ;
+    outline: none!important;
+    border: none;
+    font-size: 10pt;
+    padding: 15% 15% ;
+  
+}
+
+.left-img img {
+    width: 20px;
+    height: 20px;
+}
+
+.hotel {
+    width: 100%;
+    height: 50px;
+    background-color: #d8d8d8;
+    line-height: 100px
+}
+
+.hotel-right-up img {
+    width: 15px;
+    height: 15px;
+}
+
+.hotel-left-up img {
+    width: 30px;
+    height: 30px
+}
+
+.hotel span {
+    padding-left: 2px;
+}
+
+.hr {
+    width: 1194px;
+    height: 1px;
+    background-color: #dbd5d5;
+}
+
+.acc-table tr td {
+ 
+   
+    text-align: center;
+}
+
+.acc-table .parent tr td {
+    text-align: center;
+}
+
+.acc-table thead {
+    font-weight: bold;
+}
+
+.acc-table thead tr td {
+    border-right: 1px solid #cec6c6
+}
+
+.acc-table thead tr td:last-child {
+    border: none
+}
+
+.acc-table tbody tr td {
+    border-bottom: 1px solid #cec6c6
+}
+
+.acc-table tbody tr:last-child td {
+    border: none
+}
+
+.acc-table .footer-textbox {
+    height: 40px;
+    border: solid 1px #6d85ff;
+    background-color: #efefef;
+    width: 110%;
+}
+
+.acc-table .parent {
+    background-color: #d8d8d8;
+}
+
+.acc-table tfoot {
+    width: 100%;
+    height: 32px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid 1px #6d85ff;
+    background-color: #6d85ff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.acc-table tfoot td {
+    padding: 0% 1%;
+}
+
+input[type=text]{
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 10pt;
+    padding: 15% 15%
+
+}
+
+
+.acc-table input[type=text]{
+    height: 15px;
+    width: 100%;
+    background-color: #efefef;
+}
+
+.acc-table input[type=text]:hover{
+    background-color: #faf6f6;
+}

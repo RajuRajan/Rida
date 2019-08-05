@@ -1,0 +1,183 @@
+.header {
+    height: 23%;
+    background-color: #ffffff;
+    padding-top: 85px;
+    padding-left: 20px;
+}
+
+.header span {
+    margin-left: 21px;
+}
+
+.header p span {
+    margin-left: 76px;
+}
+
+.header img {
+    width: 25px;
+    height: 25px;
+    margin-left: 30px
+}
+
+.layout-menu {
+    width: 100%;
+    height: auto;
+    background-color: #d8d8d8;
+    text-align: center;
+    padding: 0 15%;
+    line-height: 50px;
+    margin-top: 1%;
+    font-weight: bold;
+}
+
+
+
+.rectangle {
+    width: 237px;
+    height: 36px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #2d153b;
+    color: #ffffff;
+    text-align: center;
+    line-height: 36px;
+    position: relative;
+    z-index: 1;
+}
+
+.rectangle-toggle {
+    width: 237px;
+    height: 36px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #b0b0b0;
+    color: #ffffff;
+    text-align: center;
+    line-height: 36px;
+    top: 0;
+    margin-left: 230px;
+    position: absolute;
+}
+
+.container-fluid .row {
+    width: 90%;
+}
+
+.selected {
+    background-color: #6fcf3d;
+    color: #ffffff
+}
+
+.trash-edit .col-1.trash {
+    margin:0px 0px ;
+    padding: 0px;
+    cursor: pointer;
+    text-align: center
+}
+
+.trash-edit .col-1.edit {
+    margin:0px 0px;
+    cursor: pointer;
+    padding: 0px;
+    text-align: center
+}
+.trash-edit .col-1.edit img{
+  margin: 0px 10px
+}
+
+.table-row1 {
+    height: 36px;
+    border-radius: 10px;
+    background-color: #d8d8d8;
+    font-weight: bold;
+}
+
+.table-row2 {
+    height: 54px;
+    background-color: #fcfcfc;
+}
+
+.duration-table tbody tr td {
+    border-right: 1px solid #c4bfbf;
+}
+
+.duration-table tbody tr td:last-child {
+    border: none
+}
+
+.selected::after {
+    content: " ";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    background-color: #6fcf3d;
+    left: 50%;
+    transform: translateX(-50%) rotateZ(45deg);
+    top: 45px
+}
+
+.btn-prim {
+    width: 145px;
+    height: 42px;
+    border-radius: 5px;
+    border: solid 1.5px #222222;
+}
+
+.btn-sec {
+    width: 145px;
+    height: 42px;
+    border-radius: 5px;
+    background-color: #6fcf3d;
+    color: #ffffff;
+    border: none
+}
+
+.btn-sec-1 {
+    width: 185px;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6fcf3d;
+    margin-left: 60px;
+    color: #ffffff
+}
+
+.btn-sec-2 {
+    width: 250px;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6fcf3d;
+    color: #ffffff
+}
+
+.btn-sec-copy {
+    width: 145px;
+    height: 42px;
+    border-radius: 5px;
+    border: solid 1.5px #6fcf3d;
+    color: #000;
+ 
+}
+
+#Itinerary {
+    display: block;
+}
+
+#Offer {
+    display: block
+}
+
+#Quotation {
+    display: block
+}
+
+a{
+    text-decoration: none;
+    color: #000
+}
+
+a:hover{
+    text-decoration: none;   
+}
+

@@ -1,0 +1,148 @@
+.nav {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  position: relative;
+  z-index: 5000;
+}
+.nav ul{
+  display:flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.nav ul .list {
+  float: left;
+  list-style: none;
+  columns: #000000;
+  padding: 0px 10px;
+  outline: 0;
+  text-align: center;
+  line-height: 70px
+}
+
+.nav .left-box ul .list:hover {
+  background: #ccc;
+  color: #000;
+  cursor: pointer;
+}
+
+.nav .right-box ul .list:hover {
+ 
+  cursor: pointer;
+}
+
+.logo img{
+  width:153px;
+  height:50px
+}
+.logo{
+  width:155px;
+  padding:1% 0;
+}
+
+
+.addcity span{
+  padding-left: 10px
+}
+.location img{
+  width:15px;
+  height:15px
+}
+.location span{
+  font-size:8pt;
+  padding-left: 10px;
+}
+.right-box .list-one{
+width:65px
+}
+
+
+/*----nav bar left-content---   right-content--*/
+
+.right-box {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  justify-content: flex-start;
+}
+.right-box .list-one img{
+  width: 20px;
+  height: 20px;
+}
+.right-box .list-two img{
+  width: 16px;
+  height: 16px;
+}
+
+.left-box {
+ width: 50%;
+}
+.left-box img{
+  width:15px;
+  height:15px
+}
+.left-box .list-two{
+width: 55px !important
+}
+.left-box .list-three{
+width: 120px
+}
+.left-box ul li {
+  width: 55px
+}
+.left-box ul li:last-child {
+  width:206px;
+  height: 70px;
+  background-color: #6fcf3d;
+  padding: 0% 
+  
+}
+.Mask {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 17px ;
+  color: #d8d8d8;
+  font-size: 16pt;
+  line-height: 32px;
+  font-weight: bold;
+  overflow: hidden;
+}
+.profile-name{
+  color:#ffffff;
+  font-weight: bold;
+  font-size: 2pt;     
+  overflow: hidden;
+}
+
+.Mask-flex{
+  display: flex;
+  width: 170px;
+  height: 69px;
+  justify-content: space-between;
+}
+
+
+/*--------------notification-----------------------------*/
+.notification {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+  }
+  .notification .badge {
+  position: relative;
+  top: -10px;
+  right: 6px;
+  padding: 2.5px 4px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  }
+
+/*--------------------------------    drop--down  -----------------------------------------------*/
+

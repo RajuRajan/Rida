@@ -1,0 +1,87 @@
+.duration-table-manager {
+    text-align: center;
+}
+
+.duration-table-manager tbody {
+    text-align: left
+}
+
+.duration-table-manager tbody tr td {
+    padding: 1% 1%;
+}
+
+.duration-table-manager .details {
+    width: 220px;
+    height: 130px;
+    color: #222222;
+    overflow-y: scroll;
+}
+
+.duration-table-manager tbody tr td {
+    border-right: 1px solid rgb(199, 196, 196);
+    border-bottom: 1px solid rgb(199, 196, 196);
+}
+
+.duration-table-manager tbody tr :last-child {
+    border-right: none;
+}
+
+.row.trash-edit {
+    margin: 0 4.7%;
+    margin-top: 3%
+}
+
+.col-1.edit {
+    text-align: right;
+    cursor: pointer
+}
+
+.col-1.edit img {
+    width: 20px;
+    height: 20px
+}
+
+.col-1.trash {
+    text-align: right;
+    cursor: pointer
+}
+
+.col-1.trash img {
+    width: 20px;
+    height: 20px
+}
+
+.row.duration-table {
+    margin: 0% 5%
+}
+
+.row.duration-table .col-12 {
+    text-align: center;
+    margin: 0 1%
+}
+
+.row.brief {
+    margin: 1% 6%
+}
+
+.row.hr {
+    margin: 1% 6%
+}
+
+.row.duration-table-manager {
+    margin: 1% 5%
+}
+
+.row.duration-table-manager-iti {
+    margin: 1% 5%;
+    margin-left: 7%;
+}
+
+.row.duration-table-manager-iti td {
+    padding: 1% 1%;
+}
+
+
+.row.duration-table-manager .col-12 {
+    margin: 0 1%
+}
