@@ -5,24 +5,6 @@ export default class Empty extends Component {
         return (
             <div>
                 <p>hi
-                    hi
-                    hi
-                    hihi
-                    hihihi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hi
-                    hihihi
-                    hi
-                    hihihi
                     
                 </p>
             </div>

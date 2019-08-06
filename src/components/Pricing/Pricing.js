@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Pricing.css';
+import Row_Duration from '../Tables/Row_Duration';
+import {accordian} from './accordian/Accordian'
 
 export default class Pricing extends Component {
 
@@ -105,21 +107,21 @@ export default class Pricing extends Component {
 
   editField()
   {
-  var textCount=document.getElementsByClassName("text").length;
-  for(let i=0 ;i<textCount;i++)
-  {
-  document.getElementsByClassName("text")[i].disabled=false;
-  }
+  // var textCount=document.getElementsByClassName("text").length;
+  // for(let i=0 ;i<textCount;i++)
+  // {
+  // document.getElementsByClassName("text")[i].disabled=false;
+  // }
   }
 
-componentDidMount()
-{
-    var textCount=document.getElementsByClassName("text").length;
-  for(let i=0 ;i<textCount;i++)
-  {
-  document.getElementsByClassName("text")[i].disabled=true;
-  }
-}
+// componentDidMount()
+// {
+//     var textCount=document.getElementsByClassName("text").length;
+//       for(let i=0 ;i<textCount;i++)
+//       {
+//       document.getElementsByClassName("text")[i].disabled=true;
+//       }
+// }
 
 
     render() {
@@ -140,71 +142,7 @@ componentDidMount()
      
     </div>
     <form onSubmit={(e)=>{e.preventDefault();this.formOneSubmit()}}>
-    <div className="row duration-table" >
-      <table className="col-12" >
-        <thead>
-          <tr className="table-row1">
-            <td width="210px">Agent</td>
-            <td width="153px">PIC</td>
-            <td>Duration</td>
-            <td>Pattern 1</td>
-            <td>Pattern 2</td>
-            <td>Start</td>
-            <td>End</td>
-            <td>Departure</td>
-            <td>Quoter</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="table-row2">
-            <td width="219px"><input type="text" className="text" placeholder="Agent" name="Agent" onChange={(e) =>this.formHandler(e)} required value={this.state.Agent}/></td>
-            <td width="153px"><input type="text" className="text" placeholder="PIC" name="PIC" onChange={(e) =>this.formHandler(e)} required value={this.state.PIC}/></td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="Duration" onChange={(e) =>this.formHandler(e)} required value={this.state.Duration}>
-                <option selected>10 days</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px" >
-              <select className="browser-default custom-select text " name="Pattern1" onChange={(e) =>this.formHandler(e)}required value={this.state.Pattern1} >
-                <option selected>DE</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="Pattern2" onChange={(e) =>this.formHandler(e)} required value={this.state.Pattern2}>
-                <option selected>SUM</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="Start" onChange={(e) =>this.formHandler(e)} required value={this.state.Start}>
-                <option selected>FRA</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="End" onChange={(e) =>this.formHandler(e)} required value={this.state.End }>
-                <option selected>BER</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="111px"><input type="text" className="text" placeholder="Departure" name="Departure" onChange={(e) =>this.formHandler(e)} required value={this.state.Departure}/></td>
-            <td width="111px"><input type="text" className="text" placeholder="Quoter" name="Quoter" onChange={(e) =>this.formHandler(e)} required value={this.state.Quoter}/></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <Row_Duration form_function={this.formHandler} form_field={this.state} />
     <div class="row" style={{margin: "1% 6%"}}>
         <div class="col-8"></div>
         <div class="col-2"><button class="btn-prim">Cancel</button></div>
@@ -267,7 +205,6 @@ componentDidMount()
           <tr>
             <td></td>
             <td>SUB TOTAL</td>
-
             <td></td>
             <td></td>
             <td>
@@ -292,137 +229,46 @@ componentDidMount()
     <div className="row" style={{margin:"0% 6%"}}>
       <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div className="panel panel-default">
-          <div className="panel-heading even" role="tab" id="headingOne">
+
+      
+      {accordian.map((value,index)=>{
+
+        return(
+          <div>
+          <div className={value.classname} role="tab" id={value.id}>
             <h4 className="panel-title flex">
               <div className="left-img">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                  aria-expanded="true" aria-controls="collapseOne">
-                  <img src="assets/images/badge.svg"/><span>FOC</span>
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href={value.href}
+                  aria-expanded="true" aria-controls={value.ariacontrols}>
+                  <img src={value.icon}/><span>{value.name}</span>
                 </a>
               </div>
               <div className="down"><a role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  href={value.href} aria-expanded="true" aria-controls={value.ariacontrols}>
                   <img src="assets/images/down.svg" />
                 </a></div>
             </h4>
           </div>
-          <div id="collapseOne" className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-            <div className="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-              richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-              quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-              single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-              wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-              occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-              them accusamus labore sustainable VHS.</div>
+          <div id={value.ariacontrols} className="panel-collapse collapse in" role="tabpanel" aria-labelledby={value.id}>
+            <div className="panel-body">{value.body}</div>
           </div>
-        </div>
-        <div className="panel panel-default">
-          <div className="panel-heading " role="tab" id="headingTwo">
-            <h4 className="panel-title flex">
-              <div className="left-img">
-                <a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <img src="assets/images/bus-solid.svg" /> <span>Coaches</span>
-                </a></div>
-              <div className="down"><a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <img src="assets/images/down.svg" />
-                </a></div>
-            </h4>
           </div>
-          <div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div className="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-              richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-              quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-              single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-              labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-              Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
-              heard of them accusamus labore sustainable VHS.</div>
-          </div>
-        </div>
-        <div className="panel panel-default">
-          <div className="panel-heading even" role="tab" id="headingThree">
-            <h4 className="panel-title flex">
-              <div className="left-img">
-                <a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <img src="assets/images/user.svg" /><span> Guides</span>
-                </a></div>
-              <div className="down"> <a className="collapsed" role="button" data-toggle="collapse"
-                  data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                  aria-controls="collapseThree">
-                  <img src="assets/images/down.svg" />
-                </a></div>
-            </h4>
-          </div>
-          <div id="collapseThree" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div className="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-              richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-              quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-              single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-              wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-              occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-              them accusamus labore sustainable VHS.</div>
-          </div>
-        </div>
-        <div className="panel panel-default">
-          <div className="panel-heading " role="tab" id="headingFour">
-            <h4 className="panel-title flex">
-              <div className="left-img"> <a className="collapsed" role="button" data-toggle="collapse"
-                  data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-                  aria-controls="collapseFour">
-                  <img src="assets/images/meal.svg" /><span> Meals</span>
-                </a></div>
-              <div className="down"><a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                  href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  <img src="assets/images/down.svg" />
-                </a></div>
-            </h4>
-          </div>
-          <div id="collapseFour" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-            <div className="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-              richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-              quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-              single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-              wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-              occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-              them accusamus labore sustainable VHS.</div>
-          </div>
-          <div className="panel panel-default">
-            <div className="panel-heading even" role="tab" id="headingFive">
-              <h4 className="panel-title flex">
-                <div className="left-img"><a className="collapsed" role="button" data-toggle="collapse"
-                    data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                    aria-controls="collapseFive">
-                    <img src="assets/images/building.svg" /><span> Entrance</span>
-                  </a></div>
-                <div className="down"><a className="collapsed" role="button" data-toggle="collapse"
-                    data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                    aria-controls="collapseFive">
-                    <img src="assets/images/down.svg" />
-                  </a></div>
-              </h4>
-            </div>
-            <div id="collapseFive" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFives">
-              <div className="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.</div>
-            </div>
 
-            <div className="footer flex">
+         ) 
+        }
+      )}
+          <div className="footer flex">
               <div>
                 <p>Packages</p>
               </div>
               <div><img src="assets/images/down-white.svg" width="15px" height="15px" /></div>
             </div>
-
-
-          </div>
         </div>
+
+     
+
+    
+
       </div>
     </div>
   </div>

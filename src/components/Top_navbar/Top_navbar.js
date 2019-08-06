@@ -1,24 +1,20 @@
 import React from 'react';
 import './Top_navbar.css';
-import Side_navbar from '../Side_navbar/Side_navbar';
+
 import Dropdown from '../Dropdown/Dropdown'
 
 class Top_navbar extends React.Component{
 
-  constructor(){
+  constructor(props){
 
-   super() 
-    this.state={
-      sideToggle:"sidenav"
-     }
-
+   super(props) 
   }
    toggleSidenav()
   {
-    if(this.state.sideToggle==="sidenav")
-    this.setState({sideToggle:"sidenav-toggle"})
+    if(this.props.NavState.sideToggle==="sidenav")
+    this.props.sideNavToggle("sidenav-toggle")
     else
-    this.setState({sideToggle:"sidenav"})
+    this.props.sideNavToggle("sidenav")
   }
 
 
@@ -68,7 +64,7 @@ render(){
         </ul>
       </div>
     </div>
-    <Side_navbar sideToggle={this.state}/>
+   
 
 </div>
     )

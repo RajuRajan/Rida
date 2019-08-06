@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Itinerary.css';
+import Row_Duration from '../Tables/Row_Duration';
+
 
 export default class Itinerary extends Component {
   constructor(){
@@ -70,13 +72,13 @@ export default class Itinerary extends Component {
   }
   }
 
-componentDidMount()
+disableTextField()
 {
-    var textCount=document.getElementsByClassName("text").length;
+   var textCount=document.getElementsByClassName("text").length;
   for(let i=0 ;i<textCount;i++)
   {
   document.getElementsByClassName("text")[i].disabled=true;
-  }
+  } 
 }
     render() {
 
@@ -98,71 +100,7 @@ componentDidMount()
      
     </div>
     <form onSubmit={(e)=>{e.preventDefault();this.formOneSubmit()}}>
-    <div className="row duration-table">
-    <table className="col-12" >
-        <thead>
-          <tr className="table-row1">
-            <td width="210px">Agent</td>
-            <td width="153px">PIC</td>
-            <td>Duration</td>
-            <td>Pattern 1</td>
-            <td>Pattern 2</td>
-            <td>Start</td>
-            <td>End</td>
-            <td>Departure</td>
-            <td>Quoter</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="table-row2">
-            <td width="219px"><input type="text" className="text" placeholder="Agent" name="Agent" required onChange={(e) =>this.formHandler(e)} value={this.state.Agent}/></td>
-            <td width="153px"><input type="text" className="text" placeholder="PIC" name="PIC" required onChange={(e) =>this.formHandler(e)} value={this.state.PIC}/></td>
-            <td width="131px">
-              <select className="browser-default custom-select text " required name="Duration" onChange={(e) =>this.formHandler(e)} value={this.state.Duration}>
-                <option selected>10 days</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px" >
-              <select className="browser-default custom-select text " name="Pattern1" required onChange={(e) =>this.formHandler(e)} value={this.state.Pattern1}>
-                <option selected>DE</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="Pattern2" required onChange={(e) =>this.formHandler(e)} value={this.state.Pattern2}>
-                <option selected>SUM</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="Start" required onChange={(e) =>this.formHandler(e)} value={this.state.Start}>
-                <option selected>FRA</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="131px">
-              <select className="browser-default custom-select text " name="End" required onChange={(e) =>this.formHandler(e)} value={this.state.End}>
-                <option selected>BER</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </td>
-            <td width="111px"><input type="text" className="text" placeholder="Departure" name="Departure" required onChange={(e) =>this.formHandler(e)} value={this.state.Departure}/></td>
-            <td width="111px"><input type="text" className="text" placeholder="Quoter" name="Quoter" required onChange={(e) =>this.formHandler(e)} value={this.state.Quoter}/></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <Row_Duration form_function={this.formHandler} form_field={this.state} disable_textfield={true}/>
     
     <div class="row" style={{margin: "1% 6%"}}>
         <div class="col-8"></div>

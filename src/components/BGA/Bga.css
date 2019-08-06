@@ -180,4 +180,9 @@ a{
 a:hover{
     text-decoration: none;   
 }
+input:-internal-autofill-selected {
+    background-color: rgb(255, 255, 255) !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
 
