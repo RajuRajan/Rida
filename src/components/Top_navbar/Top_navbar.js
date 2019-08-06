@@ -3,7 +3,6 @@ import './Top_navbar.css';
 import Side_navbar from '../Side_navbar/Side_navbar';
 import Dropdown from '../Dropdown/Dropdown'
 
-
 class Top_navbar extends React.Component{
 
   constructor(){
@@ -71,7 +70,6 @@ render(){
     </div>
     <Side_navbar sideToggle={this.state}/>
 
-   
 </div>
     )
 }

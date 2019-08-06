@@ -44,7 +44,6 @@ export default class Itinerary extends Component {
     this.setState({formOnedata:formdata});
     localStorage.setItem("Itinerary-formOneData",JSON.stringify(this.state.formOnedata))
 
-
     var textFields=document.getElementsByClassName("field");
    
     this.setState({

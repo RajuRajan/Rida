@@ -15,7 +15,7 @@ export default class CreateQuotation extends Component {
        End:'',
        Departure:'',
        Quoter:'' ,
-        Validity:'',
+       Validity:'',
        SameDateArrival:'',
        Master:'',
        Description:'',

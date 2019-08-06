@@ -5,8 +5,6 @@ export default class Dropdown extends Component {
   dropDown() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
-  
-
     render() {
         return (
             <div>

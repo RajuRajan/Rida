@@ -43,11 +43,7 @@
     border-right:4px solid #6fcf3d; 
     background-color: #181a27;
   }
-  .flex-sidenav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-  }
+
   #sidenav .layout {
     top: 0;
     width: 95%;

@@ -39,11 +39,7 @@ export default class Pricing extends Component {
   }
   
   formOneSubmit()
-  {
-
-    
-
-    console.log("formsubmit")
+  {  
     var object={
       Agent:this.state.Agent,
       PIC:this.state.PIC,
@@ -106,8 +102,6 @@ export default class Pricing extends Component {
 
       alert("Value Submitted")
   }
-
-
 
   editField()
   {
