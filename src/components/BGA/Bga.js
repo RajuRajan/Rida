@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Bga.css';
 import { Link } from 'react-router-dom';
 
+import arrow from '../../assets/images/arrow.svg'
+
 
 import Itinerary from '../Itinerary/Itinerary';
 import CreateQuotation from '../CreateQuotation/CreateQuotation';
@@ -36,34 +38,34 @@ export default class Bga extends Component {
 
                 <div className="header">
 
-                    <a href="#"> <img src="assets/images/arrow.svg" /></a><span>BGA/<Link to="/BGA">{this.state.BreadQuotation}</Link>/{this.state.tabs}</span>
+                    <a href="#"> <img src={arrow} /></a><span>BGA/<Link to="/BGA">{this.state.BreadQuotation}</Link>/{this.state.tabs}</span>
                     <p> <span><b> Pricing</b></span></p>
                 </div>
 
                 <Tab optionChange={this.tabOption} bread={this.breadCrum} />
 
                 {
-                    this.state.tabOption == "Itinerary" ? (
+                    this.state.tabOption === "Itinerary" ? (
                         <div id="Itinerary" >
                             <Itinerary />
                         </div>) : ""
                 }
 
                 {
-                    this.state.tabOption == "Create-Quotation" ? (
+                    this.state.tabOption === "Create-Quotation" ? (
                         <div id="Quotation" >
                             <CreateQuotation />
                         </div>) : ""
                 }
 
                 {
-                    this.state.tabOption == "Pricing" ? (
+                    this.state.tabOption === "Pricing" ? (
                         <div id="Pricing" >
                             <Pricing />
                         </div>) : ""
                 }
                 {
-                    this.state.tabOption == "Offer" ? (
+                    this.state.tabOption === "Offer" ? (
                         <div id="Offer" >
                             <Offer />
                         </div>) : ""

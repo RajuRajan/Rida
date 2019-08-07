@@ -14,7 +14,7 @@
     transition: 0.1s ease;
 
   }
-  .sidenav ul li a,.sidenav-toggle ul li a{
+  .sidenav ul li ,.sidenav-toggle ul li {
     padding: 15px 20px;
     color: #ffffff;
     display: flex;
@@ -74,7 +74,7 @@
 	float: left;
 	width: 98px;
 }
-.tabbed-box .tabs li a {
+.tabbed-box .tabs li  {
 	display: block;
 	width: 98px;
 	padding: 5px 0;
@@ -88,11 +88,11 @@
 	background-repeat: repeat-x;
 
 	}
-.tabbed-box .tabs li:first-child a {
+.tabbed-box .tabs li:first-child  {
 	border-left: none; }
-.tabbed-box .tabs li a:hover {
+.tabbed-box .tabs li :hover {
 	color: #92D050; }
-.current li a.active {
+.current li .active {
 	background: #A9DB73;
 	color: #333;
 	border-bottom: 1px solid #fff; }

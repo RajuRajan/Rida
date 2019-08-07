@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import './Pricing.css';
+
+import edit from '../../assets/images/edit-regular (1).svg';
+import trash from '../../assets/images/trash-alt-solid (1).svg';
+import bed from '../../assets/images/bed-solid.svg';
+import angleup from '../../assets/images/angle-up-solid.svg';
+import down from '../../assets/images/down-white.svg';
+import downblack from '../../assets/images/down.svg';
+
+
+
 import Row_Duration from '../Tables/Row_Duration';
 import {accordian} from './accordian/Accordian'
 
@@ -136,8 +146,8 @@ export default class Pricing extends Component {
       </div>
       <div className="col-9"></div>
       <div className="col-1 edit" onClick={()=>{this.editField()}}>
-        <img src="assets/images/edit-regular (1).svg"/>
-        <img src="assets/images/trash-alt-solid (1).svg" />
+        <img src={edit}/>
+        <img src={trash} />
       </div>
      
     </div>
@@ -154,8 +164,8 @@ export default class Pricing extends Component {
     <div className="row hotel">
       <div style={{padding:"0% 8%",lineHeight:"50px",width: "100%"}}>
         <div className="flex">
-          <div className="hotel-left-up" > <img src="assets/images/bed-solid.svg" /><span><b> Hotels</b></span></div>
-          <div className="hotel-right-up"> <img src="assets/images/angle-up-solid.svg" /></div>
+          <div className="hotel-left-up" > <img src={bed} /><span><b> Hotels</b></span></div>
+          <div className="hotel-right-up"> <img src={angleup} /></div>
         </div>
       </div>
     </div>
@@ -245,7 +255,7 @@ export default class Pricing extends Component {
               </div>
               <div className="down"><a role="button" data-toggle="collapse" data-parent="#accordion"
                   href={value.href} aria-expanded="true" aria-controls={value.ariacontrols}>
-                  <img src="assets/images/down.svg" />
+                  <img src={downblack} />
                 </a></div>
             </h4>
           </div>
@@ -261,7 +271,7 @@ export default class Pricing extends Component {
               <div>
                 <p>Packages</p>
               </div>
-              <div><img src="assets/images/down-white.svg" width="15px" height="15px" /></div>
+              <div><img src={down} /></div>
             </div>
         </div>
 

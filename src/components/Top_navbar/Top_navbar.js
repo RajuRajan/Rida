@@ -1,6 +1,14 @@
 import React from 'react';
 import './Top_navbar.css';
 
+import bar from '../../assets/images/bar.svg';
+import logo from '../../assets/images/logo.png';
+import message from '../../assets/images/message.svg';
+import addcity from '../../assets/images/plus.svg';
+import bell from '../../assets/images/bell.svg';
+import location from '../../assets/images/location.svg';
+
+
 import Dropdown from '../Dropdown/Dropdown'
 
 class Top_navbar extends React.Component{
@@ -25,15 +33,15 @@ render(){
       <div className="right-box">
         <ul>
           <li className="list list-one" onClick={()=>{this.toggleSidenav()}}>
-            <img alt="alt" src="assets/images/bar.svg" />
+            <img alt="alt" src={bar}/>
           </li>
         </ul>
         <div className="logo">
-          <img alt="alt" src="assets/images/logo.png" />
+          <img alt="alt" src={logo} />
         </div>
         <ul>
           <li className="list  list-two">
-            <div className="addcity"><img alt="alt" src="assets/images/plus.svg" /><span>Add new City</span>
+            <div className="addcity"><img alt="alt" src={addcity} /><span>Add new City</span>
             </div>
           </li>
           <li className="list">Report Bug
@@ -43,19 +51,19 @@ render(){
       <div className="left-box">
         <ul>
           <li className="list list-one">
-            <img alt="alt" src="assets/images/message.svg" />
+            <img alt="alt" src={message} />
           </li>
           <li className="list list-two">
 
             <a href="#" className="notification">
-              <span><img alt="alt" src="assets/images/bell.svg" /></span>
+              <span><img alt="alt" src={bell} /></span>
               <span className="badge">3</span>
             </a>
 
           </li>
           <li className="location list list-three">
             <div>
-              <img alt="alt" src="assets/images/location.svg" /><span>Thailand</span>
+              <img alt="alt" src={location} /><span>Thailand</span>
             </div>
           </li>
           <li className="list">

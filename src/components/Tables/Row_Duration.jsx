@@ -25,7 +25,7 @@ class Row_Duration extends React.Component{
           </tr>
         </thead>
         <tbody>
-          <tr classNameName="table-row2">
+          <tr className="table-row2">
             <td width="219px"><input type="text"  className="text" placeholder="Agent" name="Agent" required onChange={(e) =>this.props.form_function(e)} value={this.props.form_field.Agent}/></td>
             <td width="153px"><input type="text" className="text" placeholder="PIC" name="PIC" required onChange={(e) =>this.props.form_function(e)} value={this.props.form_field.PIC}/></td>
             <td width="131px">

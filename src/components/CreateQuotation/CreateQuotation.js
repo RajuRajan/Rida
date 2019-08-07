@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import './CreateQuotation.css';
+
+import edit from '../../assets/images/edit-regular (1).svg';
+import trash from '../../assets/images/trash-alt-solid (1).svg';
+
 import Row_Duration from '../Tables/Row_Duration';
 
 export default class CreateQuotation extends Component {
@@ -55,8 +59,6 @@ export default class CreateQuotation extends Component {
     var formdataTwo = this.state.formTwoData;
     formdataTwo.push(objectTwo);
     this.setState({ formTwoData: formdataTwo })
-
-    var textFields = document.getElementsByClassName("field");
     localStorage.setItem("Create-Quotation-formTwoData", JSON.stringify(this.state.formTwoData))
 
     this.setState({
@@ -96,29 +98,29 @@ export default class CreateQuotation extends Component {
     console.log(this.state.formTwoData)
     return (
       <div>
-        <div class="container-fluid">
-          <div class="row brief" ><b>Quotation Creation form</b>
+        <div className="container-fluid">
+          <div className="row brief" ><b>Quotation Creation form</b>
           </div>
-          <div class="row hr" ></div>
+          <div className="row hr" ></div>
           <form onSubmit={(e) => { e.preventDefault(); this.formOneSubmit() }}>
             <Row_Duration form_function={this.formHandler} form_field={this.state} />
-            <div class="row duration-table-manager-quotation" >
-              <table class="col-12" >
+            <div className="row duration-table-manager-quotation" >
+              <table className="col-12" >
                 <thead>
-                  <tr class="table-row1">
+                  <tr className="table-row1">
                     <td width="210px">Validity</td>
                     <td width="153px">Same Day Arrival  </td>
                     <td width="153px">Master</td>
-                    <td colspan="6">Description</td>
+                    <td colSpan="6">Description</td>
 
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="table-row2">
+                  <tr className="table-row2">
                     <td><input type="text" name="Validity" placeholder="Validity" onChange={(e) => this.formHandler(e)} required value={this.state.Validity}></input></td>
 
                     <td>
-                      <select class="browser-default custom-select " name="SameDateArrival" required onChange={(e) => this.formHandler(e)} value={this.state.SameDateArrival}>
+                      <select className="browser-default custom-select " name="SameDateArrival" required onChange={(e) => this.formHandler(e)} value={this.state.SameDateArrival}>
                         <option selected>Choose</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -126,14 +128,14 @@ export default class CreateQuotation extends Component {
                       </select>
                     </td>
                     <td >
-                      <select class="browser-default custom-select " name="Master" required onChange={(e) => this.formHandler(e)} value={this.state.Master}>
+                      <select className="browser-default custom-select " name="Master" required onChange={(e) => this.formHandler(e)} value={this.state.Master}>
                         <option selected>Choose</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                       </select>
                     </td>
-                    <td colspan="6" width="450px">
+                    <td colSpan="6" width="450px">
                       <textarea placeholder="Provide detailed description here" name="Description" required onChange={(e) => this.formHandler(e)} value={this.state.Description}></textarea>
                     </td>
                   </tr>
@@ -141,20 +143,20 @@ export default class CreateQuotation extends Component {
               </table>
             </div>
 
-            <div class="row" style={{ margin: "1% 6%" }}>
-              <div class="col-8"></div>
-              <div class="col-2"><button class="btn-prim">Cancel</button></div>
-              <div class="col-2"><input type="submit" class="btn-sec" /></div>
+            <div className="row" style={{ margin: "1% 6%" }}>
+              <div className="col-8"></div>
+              <div className="col-2"><button className="btn-prim">Cancel</button></div>
+              <div className="col-2"><input type="submit" className="btn-sec" /></div>
             </div></form>
 
-          <div class="row trash-edit" >
-            <div class="col-2">
-              <div class="rectangle">503401 - 01</div>
+          <div className="row trash-edit" >
+            <div className="col-2">
+              <div className="rectangle">503401 - 01</div>
             </div>
-            <div class="col-9"></div>
-            <div class="col-1 edit" >
-              <img src="assets/images/edit-regular (1).svg" onClick={() => { this.editField() }} />
-              <img src="assets/images/trash-alt-solid (1).svg" />
+            <div className="col-9"></div>
+            <div className="col-1 edit" >
+              <img src={edit} onClick={() => { this.editField() }} />
+              <img src={trash} />
             </div>
 
           </div>

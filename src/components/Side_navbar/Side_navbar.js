@@ -25,7 +25,6 @@ class Side_navbar extends React.Component {
   }
 
   render() {
-    console.log(elements)
 
     return (
       <div className="flex" id={this.props.sideToggle.sideToggle}>
@@ -35,13 +34,11 @@ class Side_navbar extends React.Component {
             {elements.map((value, index) => {
 
               return (
-                <Link to={value.link_to}>    <li className={value.class_name} onClick={() => { this.togglePicked(index) }}>
-                  <a>
+                <Link to={value.link_to} key={index}>    <li className={value.class_name} onClick={() => { this.togglePicked(index) }}>         
                     <div>
                       <img src={value.icon} />
                     </div>
                     <span>{value.name}</span>
-                  </a>
                 </li>
                 </Link>)
             }
