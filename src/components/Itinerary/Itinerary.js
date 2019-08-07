@@ -34,24 +34,13 @@ export default class Itinerary extends Component {
   }
 
   formOneSubmit() {
-    console.log("formsubmit")
-    var object = {
-      Agent: this.state.Agent,
-      PIC: this.state.PIC,
-      Duration: this.state.Duration,
-      Pattern1: this.state.Pattern1,
-      Pattern2: this.state.Pattern2,
-      Start: this.state.Start,
-      End: this.state.End,
-      Departure: this.state.Departure,
-      Quoter: this.state.Quoter
-    }
-    var formdata = this.state.formOnedata;
-    formdata.push(object);
+    const  { formOnedata, ...data } = this.state;
+
+    const formdata = this.state.formOnedata;
+    formdata.push(data);
     this.setState({ formOnedata: formdata });
     localStorage.setItem("Itinerary-formOneData", JSON.stringify(this.state.formOnedata))
 
-    var textFields = document.getElementsByClassName("field");
 
     this.setState({
       Agent: '',
@@ -68,22 +57,9 @@ export default class Itinerary extends Component {
 
   }
 
-  editField() {
-    var textCount = document.getElementsByClassName("text").length;
-    for (let i = 0; i < textCount; i++) {
-      document.getElementsByClassName("text")[i].disabled = false;
-    }
-  }
 
-  disableTextField() {
-    var textCount = document.getElementsByClassName("text").length;
-    for (let i = 0; i < textCount; i++) {
-      document.getElementsByClassName("text")[i].disabled = true;
-    }
-  }
   render() {
 
-    console.log(this.state.formOnedata)
     return (
 
       <div>
@@ -94,7 +70,7 @@ export default class Itinerary extends Component {
               <div className="rectangle-toggle">503401 - 02</div>
             </div>
             <div className="col-9"></div>
-            <div className="col-1 edit" onClick={() => { this.editField() }}>
+            <div className="col-1 edit" >
               <img src={edit} />
               <img src={trash} />
             </div>
@@ -137,23 +113,6 @@ export default class Itinerary extends Component {
                 <td>Start LDC Road tolls are included in the main package price. NO DIRECT PAYMENT TO THE DRIVER IS REQUIRED FOR THESE SERVICES. Parking fees and city permits are not included and MUST be paid by the Tour Leader directly to the driver. The Tour Leader must take care of the meals for the driver.</td>
                 <td className="details">Pick‐Up Frankfurt Airport Flight
               CI61 @14:45</td>
-                <td>
-                  <div className="flex">
-                    <img src={unlock} />
-                    <img src={edit} />
-                    <img src={trash} />
-                  </div>
-                </td>
-              </tr>
-
-              <tr className="table-row2">
-                <td>001</td>
-                <td>Day 2</td>
-                <td>Frankfrut</td>
-                <td>12:45 PM</td>
-                <td>Start LDC Road tolls are included in the main package price. NO DIRECT PAYMENT TO THE DRIVER IS REQUIRED FOR THESE SERVICES. Parking fees and city permits are not included and MUST be paid by the Tour Leader directly to the driver. The Tour Leader must take care of the meals for the driver.</td>
-                <td className="details">Pick‐Up Frankfurt Airport Flight
-                 CI61 @14:45</td>
                 <td>
                   <div className="flex">
                     <img src={unlock} />

@@ -35,7 +35,6 @@ export default class Bga extends Component {
     render() {
         return (
             <div>
-
                 <div className="header">
 
                     <a href="#"> <img src={arrow} /></a><span>BGA/<Link to="/BGA">{this.state.BreadQuotation}</Link>/{this.state.tabs}</span>

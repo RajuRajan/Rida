@@ -5,6 +5,7 @@ import edit from '../../assets/images/edit-regular (1).svg';
 import trash from '../../assets/images/trash-alt-solid (1).svg';
 
 import Row_Duration from '../Tables/Row_Duration';
+import TableQuotation from '../Tables/TableQuotation';
 
 export default class CreateQuotation extends Component {
 
@@ -33,31 +34,23 @@ export default class CreateQuotation extends Component {
   
   formOneSubmit() {
 
-    var object = {
-      Agent: this.state.Agent,
-      PIC: this.state.PIC,
-      Duration: this.state.Duration,
-      Pattern1: this.state.Pattern1,
-      Pattern2: this.state.Pattern2,
-      Start: this.state.Start,
-      End: this.state.End,
-      Departure: this.state.Departure,
-      Quoter: this.state.Quoter
-    }
-    var formdata = this.state.formOnedata;
-    formdata.push(object);
+    const  { formOnedata,Validity,SameDateArrival,Master,Description,formTwoData, ...data } = this.state;
+  
+
+    const formdata = this.state.formOnedata;
+    formdata.push(data);
     this.setState({ formOnedata: formdata })
     localStorage.setItem("Create-Quotation-formOneData", JSON.stringify(this.state.formOnedata))
 
-    var objectTwo = {
-      Validity: this.state.Validty,
+    const object = {
+      Validity: this.state.Validity,
       SameDateArrival: this.state.SameDateArrival,
       Master: this.state.Master,
       Description: this.state.Description
     }
 
-    var formdataTwo = this.state.formTwoData;
-    formdataTwo.push(objectTwo);
+    const formdataTwo = this.state.formTwoData;
+    formdataTwo.push(object);
     this.setState({ formTwoData: formdataTwo })
     localStorage.setItem("Create-Quotation-formTwoData", JSON.stringify(this.state.formTwoData))
 
@@ -86,12 +79,6 @@ export default class CreateQuotation extends Component {
     })
   }
 
-  editField() {
-    var textCount = document.getElementsByClassName("text").length;
-    for (let i = 0; i < textCount; i++) {
-      document.getElementsByClassName("text")[i].disabled = false;
-    }
-  }
 
   render() {
     console.log(this.state.formOnedata);
@@ -104,44 +91,8 @@ export default class CreateQuotation extends Component {
           <div className="row hr" ></div>
           <form onSubmit={(e) => { e.preventDefault(); this.formOneSubmit() }}>
             <Row_Duration form_function={this.formHandler} form_field={this.state} />
-            <div className="row duration-table-manager-quotation" >
-              <table className="col-12" >
-                <thead>
-                  <tr className="table-row1">
-                    <td width="210px">Validity</td>
-                    <td width="153px">Same Day Arrival  </td>
-                    <td width="153px">Master</td>
-                    <td colSpan="6">Description</td>
-
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="table-row2">
-                    <td><input type="text" name="Validity" placeholder="Validity" onChange={(e) => this.formHandler(e)} required value={this.state.Validity}></input></td>
-
-                    <td>
-                      <select className="browser-default custom-select " name="SameDateArrival" required onChange={(e) => this.formHandler(e)} value={this.state.SameDateArrival}>
-                        <option selected>Choose</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </td>
-                    <td >
-                      <select className="browser-default custom-select " name="Master" required onChange={(e) => this.formHandler(e)} value={this.state.Master}>
-                        <option selected>Choose</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </td>
-                    <td colSpan="6" width="450px">
-                      <textarea placeholder="Provide detailed description here" name="Description" required onChange={(e) => this.formHandler(e)} value={this.state.Description}></textarea>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          
+            <TableQuotation form_function={this.formHandler} form_field={this.state} />
 
             <div className="row" style={{ margin: "1% 6%" }}>
               <div className="col-8"></div>
@@ -155,14 +106,12 @@ export default class CreateQuotation extends Component {
             </div>
             <div className="col-9"></div>
             <div className="col-1 edit" >
-              <img src={edit} onClick={() => { this.editField() }} />
+              <img src={edit} />
               <img src={trash} />
             </div>
 
           </div>
           <Row_Duration form_function={this.formHandler} form_field={this.state} />
-
-
         </div>
       </div>
     )

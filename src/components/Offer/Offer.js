@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Offer.css';
+import {Terms} from'./TermsData/Terms'
 
 export default class Offer extends Component {
 constructor()
@@ -43,35 +44,17 @@ constructor()
 
 <div class="term-header"><b>Terms</b></div>
 
+
 <div class="term-body">
-  <label class="container">Print agent T&C
-      <input type="checkbox" name="print_agent"  onChange={(e)=>{this.check(e)}}/>
+  {Terms.map((value,index)=>{
+    return(
+      <label class="container">{value.name}
+      <input type="checkbox"  onChange={(e)=>{this.check(e)}}/>
       <span class="checkmark"></span>
     </label>
-    <label class="container">Print holidays/events
-      <input type="checkbox" name="print_holiday" onChange={(e)=>{this.check(e)}}/>
-      <span class="checkmark"></span>
-    </label>
-    <label class="container" name="print_picture">Print pictures
-      <input type="checkbox" onChange={(e)=>{this.check(e)}} />
-      <span class="checkmark"></span>
-    </label>
-    <label class="container">Itinerary summary
-      <input type="checkbox" name="itinerary_summary"onChange={(e)=>{this.check(e)}}/>
-      <span class="checkmark"></span>
-    </label>
-    <label class="container">Trade fair list
-        <input type="checkbox" name="trade_fair_list"  onChange={(e)=>{this.check(e)}}/>
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Parking Fees Included
-          <input type="checkbox" name="parking_fees_included" onChange={(e)=>{this.check(e)}}/>
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">Driver’s Meal
-            <input type="checkbox" name="drivers_meal"  onChange={(e)=>{this.check(e)}}/>
-            <span class="checkmark"></span>
-          </label>
+  
+  )}
+    )}
   
 </div>
 <div class="row offer-btn" >
